@@ -466,19 +466,27 @@ variables P Q : U -> Prop
 theorem demorgan_exists :
   ¬(∃x, P x) → (∀x, ¬P x)  :=
 begin
-  sorry,
+  intro dleft,
+  intro x,
+  intro pdex,
+  apply dleft,
+  existsi x,
+  exact pdex,
 end
 
 theorem demorgan_exists_converse :
   (∀x, ¬P x) → ¬(∃x, P x)  :=
 begin
-  sorry,
+  intro dleft,
+  intro d2,
+  cases d2 with x pdex,
+  exact dleft x pdex,
 end
 
 theorem demorgan_forall :
   ¬(∀x, P x) → (∃x, ¬P x)  :=
 begin
-  sorry,
+  intro dleft,
 end
 
 theorem demorgan_forall_converse :
